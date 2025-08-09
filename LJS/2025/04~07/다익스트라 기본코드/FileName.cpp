@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <vector>
-#include <climits>
+
 using namespace std;
 struct Edge {
 	int num;
@@ -23,7 +23,6 @@ void dijkstra(int st) {
 	{
 		Edge now = pq.top();
 		pq.pop();
-		//가지치기 조건
 		if (dist[now.num] < now.cost) continue;
 		for (int i=0;i < v[now.num].size(); i++) {
 			long long nextCost = now.cost + v[now.num][i].cost;
